@@ -5,6 +5,8 @@ tarjeta.innerHTML = `
         <div class="grid">
             <div class="header">
             <p>Placa Madre</p>
+
+            <a href="https://github.com/anleu04/Tarjeta_Madre"></a>
             </div>
             <div class="foto">
                 <div class="comlumna1">
@@ -57,7 +59,7 @@ tarjeta.innerHTML = `
                             <button class="open-modal boton1">RAM</button>
                             <div class="modal">
                                 <div class="modal-content">
-                                    <button class="download-btn">Descargar JPG</button>
+                                    <button class="download-btn">⏬</button>
                                     <span class="close">&times;</span>
                                     <h1>Ranuras De RAM</h1>
                                     <p>Una ranura de RAM, también conocida como ranura de memoria o zócalo de memoria, es un conector físico en una computadora tarjeta madre Diseñado para contener y conectar módulos de memoria de acceso aleatorio (RAM). Estas ranuras permiten a los usuarios ampliar la capacidad de memoria del sistema agregando módulos RAM adicionales, lo que mejora el rendimiento y las capacidades multitarea. Existen diferentes tipos de ranuras de RAM, como DDR4 y DDR5, cada una compatible con módulos de RAM específicos. Las placas base modernas suelen venir con entre 2 y 4 ranuras de memoria, lo que también determina qué tipo de RAM utiliza la computadora.</p>
@@ -73,7 +75,7 @@ tarjeta.innerHTML = `
                             <button class="open-modal boton2">Socket</button>
                             <div class="modal">
                                 <div class="modal-content">
-                                    <button class="download-btn">Descargar JPG</button>
+                                    <button class="download-btn">⏬</button>
                                     <span class="close">&times;</span>
                                     <h1>SOCKET</h1>
                                     <p>El socket o zócalo es la zona de la placa base donde se instala la CPU, posicionada al costado de los slots de memoria RAM y justo encima de las ranuras PCI-Express. Intel y AMD han ido desarrollando varios sockets conforme iban lanzando familias de procesadores. Como es de esperar, el socket y el procesador deben ser compatibles, pero puede darse el caso que sean incompatibles. ¿Cómo? Por cuestiones del chipset, que ya abordamos en un post separado en su ocasión. Normalmente, se lanza el socket junto con una generación de procesadores; un año después, Intel o AMD lanzan nuevos procesadores que suelen ser compatibles con el socket que ya está en el mercado.</p>
@@ -89,7 +91,7 @@ tarjeta.innerHTML = `
                             <button class="open-modal boton3">BIOS</button>
                             <div class="modal">
                                 <div class="modal-content">
-                                    <button class="download-btn">Descargar JPG</button>
+                                    <button class="download-btn">⏬</button>
                                     <span class="close">&times;</span>
                                     <h1>BIOS</h1>
                                     <p>El BIOS (sistema básico de entrada y salida) es el programa que utiliza el microprocesador de una computadora para iniciar el sistema informático después de encenderlo. También administra el flujo de datos entre el sistema operativo (OS) de la computadora y los dispositivos conectados, como el disco duro, el adaptador de video, el teclado, el mouse y la impresora.</p>
@@ -105,7 +107,7 @@ tarjeta.innerHTML = `
                             <button class="open-modal boton4">24 PINES</button>
                             <div class="modal">
                                 <div class="modal-content">
-                                    <button class="download-btn">Descargar JPG</button>
+                                    <button class="download-btn">⏬  </button>
                                     <span class="close">&times;</span>
                                     <h1>24 PINES</h1>
                                     <p>Este es el conector de alimentación principal para la placa base. Actualmente, este conector ya suele ser un conector único de 24 pines, pero en algunos casos tenemos un conector de 20 pines y un extra de 4 pines. El motivo de este segundo tipo de conector es que algunas placas base antiguas usaban un conector de 20 pines, pero está en desuso y por este motivo ya casi siempre es un conector único de 24 pines y ya está.</p>
@@ -121,7 +123,7 @@ tarjeta.innerHTML = `
                             <button class="open-modal boton5">PCI</button>
                             <div class="modal">
                                 <div class="modal-content">
-                                    <button class="download-btn">Descargar JPG</button>
+                                    <button class="download-btn">⏬</button>
                                     <span class="close">&times;</span>
                                     <h1>RANURA PCI</h1>
                                     <p>Una ranura PCI, por lo tanto, es un espacio abierto en una placa madre (también conocida como placa base, tarjeta madre, motherboard o mainboard) que se usa para conectar tarjetas de expansión. Antes de avanzar, es importante aclarar varios conceptos. Un bus es un sistema compuesto por cables, circuitos integrados, condensadores, resistores y otros elementos que posibilitan la transferencia de datos entre las partes de una computadora. Una tarjeta de expansión, por otra parte, es un dispositivo con chips y controladores que se utiliza para incrementar las capacidades de un equipo. Tipos de ranuras PCI: Como casi todos los conceptos pertenecientes al ámbito de la tecnología informática, PCI tiene un cierto grado de complejidad que nos impide definirlo simplemente explicando el significado de su sigla. Por lo pronto, una primera clasificación nos arroja al menos tres tipos de ranuras PCI: de 64 bits, de 32 bits y PCI-X.</p>
@@ -137,7 +139,7 @@ tarjeta.innerHTML = `
                             <button class="open-modal boton6">Conector Procesador</button>
                             <div class="modal">
                                 <div class="modal-content">
-                                    <button class="download-btn">Descargar JPG</button>
+                                    <button class="download-btn">⏬</button>
                                     <span class="close">&times;</span>
                                     <h1>CONECTOR PROCESADOR</h1>
                                     <p>Un conector de alimentación de CPU de 4 pines es el conector estándar para la mayoría de las CPU. Tiene dos cables amarillos y dos cables negros, y se conecta a un zócalo de 4 pinos en la placa base . Un conector de 4 pines puede entregar hasta 192 vatios de potencia, que es suficiente para la mayoría de las CPU.</p>
@@ -153,7 +155,7 @@ tarjeta.innerHTML = `
                             <button class="open-modal boton7">Puertos</button>
                             <div class="modal">
                                 <div class="modal-content">
-                                    <button class="download-btn">Descargar JPG</button>
+                                    <button class="download-btn">⏬</button>
                                     <span class="close">&times;</span>
                                     <h1>PUERTOS</h1>
                                     <p>Estos puertos nos permiten conectar dispositivos, o periféricos, a la computadora. Tenemos el puerto paralelo, el puerto de impresora. También tenemos el puerto serial, utilizado también para impresoras, pero mucho más utilizado para conectar un ratón (mouse). El puerto que actualmente utilizamos para el ratón es el puerto PS/2, que tiene dos conectores, uno verde para el ratón y uno púrpura para el teclado. El puerto VGA, que es el puerto del monitor. Por último, el puerto USB, actualmente muy utilizado por ratones y teclados en general.</p>
@@ -183,16 +185,6 @@ document.querySelectorAll('.open-modal').forEach(button => {
 });
 
 
-const header = document.querySelector('.header');
-const linkButton = document.createElement('button');
-linkButton.id = 'header-button';
-linkButton.className = 'link-button';
-linkButton.textContent = 'GITHUB';
-linkButton.addEventListener('click', () => {
-    window.location.href = 'https://github.com/anleu04/Tarjeta_Madre'; 
-});
-header.appendChild(linkButton);
-
    
 document.querySelectorAll('.close').forEach(span => {
     span.addEventListener('click', () => {
@@ -214,7 +206,7 @@ document.querySelectorAll('.download-btn').forEach(button => {
     });
 });
 
-
+ 
 document.querySelectorAll('input[name="category"], #show-all').forEach(checkbox => {
     checkbox.addEventListener('change', () => {
         const showAllChecked = document.querySelector('#show-all').checked;
