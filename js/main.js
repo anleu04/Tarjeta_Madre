@@ -4,7 +4,7 @@ tarjeta.innerHTML = `
     <div class="padre">
         <div class="grid">
             <div class="header">
-            <p>Placa Madre</p>
+            <p>TechMap</p>
 
             <a href="https://github.com/anleu04/Tarjeta_Madre"></a>
             </div>
@@ -14,17 +14,17 @@ tarjeta.innerHTML = `
                         <label class="checkbox-container">
                             <input type="checkbox" id="show-all" />
                             <span class="checkmark"></span>
-                            Mostrar Todos
+                            PC
                         </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="category" value="RAM">
                             <span class="checkmark"></span>
-                            RAM
+                            Placa madre  
                         </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="category" value="SOCKET">
                             <span class="checkmark"></span>
-                            Socket
+                            CPU
                         </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="category" value="BIOS">
@@ -39,12 +39,12 @@ tarjeta.innerHTML = `
                         <label class="checkbox-container">
                             <input type="checkbox" name="category" value="PCI">
                             <span class="checkmark"></span>
-                            PCI
+                            GPU
                         </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="category" value="CONECTOR PROCESADOR">
                             <span class="checkmark"></span>
-                            Conector Procesador
+                            Fuente de poder
                         </label>
                         <label class="checkbox-container">
                             <input type="checkbox" name="category" value="PUERTOS">
@@ -200,23 +200,50 @@ document.querySelectorAll('.download-btn').forEach(button => {
         html2canvas(modalContent).then(canvas => {
             const link = document.createElement('a');
             link.href = canvas.toDataURL('image/jpeg', 1.0);
-            link.download = 'modal-content.jpg';
+            link.download = 'Contenido.jpg';
             link.click();
         });
     });
 });
 
- 
 document.querySelectorAll('input[name="category"], #show-all').forEach(checkbox => {
     checkbox.addEventListener('change', () => {
+
         const showAllChecked = document.querySelector('#show-all').checked;
         const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(checkbox => checkbox.value.toUpperCase());
         const buttons = document.querySelectorAll('.btn1, .btn2, .btn3, .btn4, .btn5, .btn6, .btn7');
 
         buttons.forEach(button => {
             const buttonCategory = button.querySelector('.open-modal').textContent.toUpperCase();
-            button.style.display = showAllChecked || selectedCategories.includes(buttonCategory) ? 'block' : 'none';
+
+            // Mostrar botones específicos cuando se selecciona "Socket"
+            if (selectedCategories.includes("SOCKET")) {
+                if (["SOCKET", "CONECTOR PROCESADOR"].includes(buttonCategory)) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            } 
+            // Mostrar botones específicos cuando se selecciona "RAM"
+            else if (selectedCategories.includes("RAM")) {
+                if (["RAM", "SOCKET", "PCI", "PUERTOS", "BIOS"].includes(buttonCategory)) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            } 
+            // Mostrar botones específicos cuando se selecciona "Fuente de Poder"
+            else if (selectedCategories.includes("FUENTE DE PODER")) {
+                if (["24 PINES", "CONECTOR PROCESADOR"].includes(buttonCategory)) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            }
+            // Lógica general para mostrar los botones según los checkboxes seleccionados
+            else {
+                button.style.display = showAllChecked || selectedCategories.includes(buttonCategory) ? 'block' : 'none';
+            }
         });
     });
 });
-
