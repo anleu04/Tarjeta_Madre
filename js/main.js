@@ -177,6 +177,27 @@ tarjeta.innerHTML = `
 `;
 
 
+function convertirAMayusculas(texto) {
+    const conversion = {
+        'a': 'A', 'b': 'B', 'c': 'C', 'd': 'D', 'e': 'E', 'f': 'F', 'g': 'G', 
+        'h': 'H', 'i': 'I', 'j': 'J', 'k': 'K', 'l': 'L', 'm': 'M', 'n': 'N',
+        'o': 'O', 'p': 'P', 'q': 'Q', 'r': 'R', 's': 'S', 't': 'T', 'u': 'U', 
+        'v': 'V', 'w': 'W', 'x': 'X', 'y': 'Y', 'z': 'Z'
+    };
+
+    let resultado = '';
+    for (let i = 0; i < texto.length; i++) {
+        let caracter = texto[i];
+        if (conversion[caracter] !== undefined) {
+            resultado += conversion[caracter];
+        } else {
+            resultado += caracter;
+        }
+    }
+    return resultado;
+}
+
+
 document.querySelectorAll('.open-modal').forEach(button => {
     button.addEventListener('click', () => {
         const modal = button.nextElementSibling;
@@ -184,15 +205,12 @@ document.querySelectorAll('.open-modal').forEach(button => {
     });
 });
 
-
-   
 document.querySelectorAll('.close').forEach(span => {
     span.addEventListener('click', () => {
         const modal = span.closest('.modal');
         modal.style.display = 'none';
     });
 });
-
 
 document.querySelectorAll('.download-btn').forEach(button => {
     button.addEventListener('click', () => {
@@ -210,29 +228,34 @@ document.querySelectorAll('input[name="category"], #show-all').forEach(checkbox 
     checkbox.addEventListener('change', () => {
 
         const showAllChecked = document.querySelector('#show-all').checked;
-        const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(checkbox => checkbox.value.toUpperCase());
+        const checkboxes = document.querySelectorAll('input[name="category"]:checked');
+        let selectedCategories = [];
+        checkboxes.forEach(checkedBox => {
+            selectedCategories = selectedCategories.concat(convertirAMayusculas(checkedBox.value));
+        });
+
         const buttons = document.querySelectorAll('.btn1, .btn2, .btn3, .btn4, .btn5, .btn6, .btn7');
 
         buttons.forEach(button => {
-            const buttonCategory = button.querySelector('.open-modal').textContent.toUpperCase();
+            const buttonCategory = convertirAMayusculas(button.querySelector('.open-modal').textContent);
 
-            // Mostrar botones específicos cuando se selecciona "Socket"
+           
             if (selectedCategories.includes("SOCKET")) {
                 if (["SOCKET", "CONECTOR PROCESADOR"].includes(buttonCategory)) {
                     button.style.display = 'block';
                 } else {
                     button.style.display = 'none';
                 }
-            } 
-            // Mostrar botones específicos cuando se selecciona "RAM"
+            }
+            
             else if (selectedCategories.includes("RAM")) {
                 if (["RAM", "SOCKET", "PCI", "PUERTOS", "BIOS"].includes(buttonCategory)) {
                     button.style.display = 'block';
                 } else {
                     button.style.display = 'none';
                 }
-            } 
-            // Mostrar botones específicos cuando se selecciona "Fuente de Poder"
+            }
+            
             else if (selectedCategories.includes("FUENTE DE PODER")) {
                 if (["24 PINES", "CONECTOR PROCESADOR"].includes(buttonCategory)) {
                     button.style.display = 'block';
@@ -240,9 +263,13 @@ document.querySelectorAll('input[name="category"], #show-all').forEach(checkbox 
                     button.style.display = 'none';
                 }
             }
-            // Lógica general para mostrar los botones según los checkboxes seleccionados
+            
             else {
-                button.style.display = showAllChecked || selectedCategories.includes(buttonCategory) ? 'block' : 'none';
+                if (showAllChecked || selectedCategories.includes(buttonCategory)) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
             }
         });
     });
